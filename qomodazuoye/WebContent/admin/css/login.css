@@ -1,0 +1,8 @@
+body{background:url(../images/adminbg.jpg) no-repeat center 50px #90C2FF;}
+ol,ul {list-style:none;}
+.login{width:280px;margin-left:310px; margin-top:266px; height:100%; overflow:hidden;}
+.login ul li{margin-top:5px; height:26px;}
+.login ul li label{float:left; display:block; width:70px; text-align:right; padding-top:6px; font-size:12px;}
+.login ul li span input{height:18px; margin-top:2px; margin-left:2px; width:130px;}
+input.tblg{width:107px; height:36px; background:url(../images/dllgbtn.png) no-repeat left top; _background:none; _filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src="images/dllgbtn.png",sizingMethod="crop"); border:none; cursor:pointer;}
+.login a,.login a:visited{color:#025CC1; font-size:12px; text-decoration:underline;}
