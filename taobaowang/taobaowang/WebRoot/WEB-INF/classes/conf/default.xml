@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN" "http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+<constant name="struts.devMode" value="true" />
+<constant name="struts.configuration.xml.reload" value="true"/>
+<constant name="struts.ui.theme" value="simple" />
+<constant name="struts.multipart.maxSize" value="20971520"/>
+<constant name="struts.custom.i18n.resources" value="ApplicationResource" />
+<package name="default" namespace="/" extends="struts-default">
+	<interceptors>
+		<interceptor name="userlogincheck" class="common.UserLoginCheck"></interceptor>
+		<interceptor-stack name="mystack1">
+			<interceptor-ref name="userlogincheck"></interceptor-ref>
+			<interceptor-ref name="defaultStack"></interceptor-ref>
+		</interceptor-stack>
+	</interceptors>
+	<default-interceptor-ref name="mystack1"></default-interceptor-ref>
+	<global-results>
+		<result name="userlogincheckfail">/userLogin.jsp</result>
+	</global-results>
+	<action name="changelanguage" class="action.ChangeLanguageAction">
+		<interceptor-ref name="defaultStack"></interceptor-ref>
+		<result>/userLogin.jsp</result>
+	</action>
+	
+	
+</package>
+</struts>    

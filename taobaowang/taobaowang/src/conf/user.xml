@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN" "http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+	<constant name="struts.devMode" value="true" />
+	<constant name="struts.configuration.xml.reload" value="true"/>
+	<package name="user" namespace="/user" extends="default">
+	<action name="userlogin" class="action.UserAction" method="userLogin">
+			<interceptor-ref name="defaultStack"></interceptor-ref>
+	        <result name="suc">/main.jsp</result>
+			<result name="error">/userLogin.jsp</result>	
+			<result name="input">/userLogin.jsp</result>
+		</action>
+		<action name="getalluser" class="action.UserAction" method="selectAllUser">
+		     
+			<result name="success">/showalluser.jsp</result>
+		</action>
+		<action name="userunlock" class="action.UserAction" method="userUnlock">
+		 
+		   <result name="success" type="chain">getalluser</result>
+		</action>
+		<action name="preinsertuser" class="action.UserAction" method="preInsertUser">
+		 	<interceptor-ref name="defaultStack"></interceptor-ref>
+			<result name="success">/insertUser.jsp</result>
+		</action>
+		<action name="checkname" class="action.UserAction" method="checkUserName">
+		     <interceptor-ref name="defaultStack"></interceptor-ref>
+			<result name="success">/insertUser.jsp</result>
+			<result name="checkerror" >/insertUser.jsp</result>
+		</action>
+		<action name="insertuser" class="action.UserAction" method="insertUser">
+		    <interceptor-ref name="defaultStack"></interceptor-ref>
+			<result name="success" type="chain">getalluser</result>
+			<result name="insertusererror">/insertUser.jsp</result>
+		</action>
+		<action name="deleteuser" class="action.UserAction" method="deleteUser">
+		 
+			<result name="success" type="chain">getalluser</result>
+			<result name="deleteusererror"  type="chain">getalluser</result>
+		</action>	
+		<action name="selectuserbyuserid" class="action.UserAction" method="selectUserByUserid">
+		
+			<result name="success" >/updateUser.jsp</result>
+		</action>
+		<action name="updateuser" class="action.UserAction" method="updateUser">
+		 
+        	<result name="success" type="chain">getalluser</result>
+        	<result name="updateusererror">/insertUser.jsp</result>
+        </action>
+		<action name="logoff" class="action.UserAction" method="logoff">
+		
+		    <result name="success" >/userLogin.jsp</result>
+		</action>	
+		<action name="userlogoff" class="action.UserAction" method="logoff">
+		 
+	        <result name="success" >/userLogin.jsp</result>
+		</action>
+		<action name="preregister" class="action.UserAction" method="preInsertUser">
+		 
+		    <result name="success">/UserRegister.jsp</result>
+		</action>
+		<action name="registercheckname" class="action.UserAction" method="checkUserName">
+		     
+			<result name="success">/UserRegister.jsp</result>
+			<result name="checkerror" >/UserRegister.jsp</result>
+		</action>
+		<action name="userregister" class="action.UserAction" method="insertUser">
+		 
+		     <result name="success">/userLogin.jsp</result>
+			<result name="insertusererror">/insertUser.jsp</result>
+		</action>	
+	</package>
+</struts>    

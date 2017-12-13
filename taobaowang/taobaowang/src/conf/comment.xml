@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN" "http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+<package name="comment" namespace="/comment" extends="default">
+<default-interceptor-ref name="mystack1"></default-interceptor-ref>
+	<action name="preinsertcomment" class="action.CommentAction" method="preInsertComment">
+		<result name="success">/insertComment.jsp</result>
+	</action>
+	<action name="insertcomment" class="action.CommentAction" method="insertComment">
+		<result name="success" type="chain">getallcomments</result>
+		<result name="insertcommenterror">/insertComment.jsp</result>
+	</action>
+	<action name="getallcomments" class="action.CommentAction" method="getAllComments">
+		<result name="success">/showallComments.jsp</result>
+	</action>
+		<action name="deletecomment" class="action.CommentAction" method="deleteComment">
+			<result name="success" type="chain">mycomments</result>
+			<result name="deletecommenterror" type="chain">mycomments</result>
+		</action>		
+	<action name="selectcommentbycmid" class="action.CommentAction" method="selectCommentByCmid">
+		<result>/updateComment.jsp</result>
+	</action>
+	<action name="updatecomment" class="action.CommentAction" method="updateComment">
+		<result type="chain">mycomments</result>
+		<result name="updatecommenterror" type="chain">mycomments</result>
+	</action>
+	<action name="mycomments" class="action.CommentAction" method="getMyComments">
+		<result>/mycomments.jsp</result>
+	</action>
+</package>
+</struts>    

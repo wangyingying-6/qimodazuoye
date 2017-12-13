@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN" "http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+<package name="book" namespace="/book" extends="default">
+<default-interceptor-ref name="mystack1"></default-interceptor-ref>
+	<action name="preinsertbook" class="action.BookAction" method="getAllBooks">
+		<result>/preinsertbook.jsp</result>
+	</action>
+	<action name="insertbook" class="action.BookAction" method="insertBook">
+	  <result>/showallRoomsforguest.jsp</result>
+	  <result name="insertbookerror">/index.jsp</result>
+	  <result name="login">/Userlogin.jsp</result>
+	</action>
+	<action name="getallbooks" class="action.BookAction" method="getAllBooks">
+		<result>/book.jsp</result>
+	</action>
+	<action name="getbooking" class="action.BookAction" method="getBooking">
+		<result>/allbook.jsp</result>
+	</action>
+	<action name="removeroomfrombook" class="action.BookAction" method="removeRoomfromBook">
+		<result type="chain">getallbooks</result>
+		<result name="deletebookerror">/book.jsp</result>
+	</action>
+	<action name="selectBookByRidandUserid" class="action.BookAction" method="selectBookByRidandUserid">
+		<result>/updatebook.jsp</result>
+	</action>
+	<action name="updatebook" class="action.BookAction" method="updateBook">
+		<result type="chain">getallbooks</result>
+		<result name="updatebookerror">/index.jsp</result>
+	</action>
+</package>
+</struts>    

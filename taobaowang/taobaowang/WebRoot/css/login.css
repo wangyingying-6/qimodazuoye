@@ -1,0 +1,95 @@
+/* The main calendar widget.  DIV containing a table. */
+
+#bb{
+	
+	background:url("../image/40.jpg");
+	width: 400px;
+	height: 500px;
+	
+	}
+#a{margin-left: 100px;
+	}
+body{background: url("../image/lg.png");
+	
+	}
+#cc{margin-left: 450px;
+	border-color: #04A8C4;
+	border-width:thick;
+	border-style:groove;
+	}
+#showtypes{
+	background: url("../image/iframe.jpg");
+	color: #679E22;
+	}
+
+#addtype{
+	background: url("../image/iframe.jpg");
+	color: #679E22;
+	}
+#biaoge2{
+	border-color: #FF9900;
+	border-style:groove;
+	}
+#updatetype{
+	background: url("../image/iframe.jpg");
+	color: #679E22;
+	}
+#biaoge3{
+	border-color: #FF9900;
+	border-style:groove;
+	}
+#showallroomsforguest{
+	background: url("../image/iframe.jpg");
+	color: #679E22;
+	}
+#top{
+
+	height: 60px;
+	line-height: 60px;
+	
+	}
+#table{
+	width: 100%;
+	height: 60px;
+	line-height: 100px;
+	}
+#preinsertbook{
+	background: url("../image/iframe.jpg");
+	color: #679E22;
+	}
+#biaoge4{
+	border-color: #FF9900;
+	border-style:groove;
+	}
+#book{
+	background: url("../image/iframe.jpg");
+	color: #679E22;
+	}
+#biaoge5{
+	border-color: #FF9900;
+	border-style:groove;
+	}
+#allorders{
+	background: url("../image/iframe.jpg");
+	color: #679E22;
+	}
+#biaoge6{
+	border-color: #FF9900;
+	border-style:groove;
+	}
+#myorders{
+	background: url("../image/iframe.jpg");
+	color: #679E22;
+	}
+#biaoge7{
+	border-color: #FF9900;
+	border-style:groove;
+	}
+#orderdetail{
+	background: url("../image/iframe.jpg");
+	color: #679E22;
+	}
+#biaoge8{
+	border-color: #FF9900;
+	border-style:groove;
+	}

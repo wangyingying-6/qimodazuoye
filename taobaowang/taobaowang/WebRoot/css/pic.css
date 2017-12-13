@@ -1,0 +1,6 @@
+/* CSS Document */
+#form{ margin-top:370px; margin-left:250px;}
+a:link { font-size: 14pt; color:#FFFFFF; text-decoration:none; } 
+a:hover { font-size: 14pt; text-decoration: underline; color:#FFFFFF; }
+a:hover span{ color:#FFFFFF; } 
+a:visited { font-size: 14pt; text-decoration: underline; color:#663333; font-weight:bolder } 

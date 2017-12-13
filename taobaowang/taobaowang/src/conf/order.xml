@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN" "http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+<package name="order" namespace="/order" extends="default">
+<default-interceptor-ref name="mystack1"></default-interceptor-ref>
+	<action name="account" class="action.OrderAction" method="account">
+	<result type="chain">myorders</result>
+	<result name="insertordererror">/index.jsp</result>
+   </action>
+   <action name="myorders" class="action.OrderAction" method="getMyOrders">
+	<result>/myorders.jsp</result>
+   </action>
+    <action name="allorders" class="action.OrderAction" method="getOrders">
+	<result>/allorders.jsp</result>
+   </action>
+ 
+   <action name="orderdetails" class="action.OrderAction" method="getOrderDetail">
+			<result>/orderdetail.jsp</result>
+		</action>
+   <action name="updateorderstatus" class="action.OrderAction" method="updateOrderStatus">
+	<result type="chain">allorders</result>
+	</action>
+	<action name="allordersbytime" class="action.OrderAction" method="getOrdersBytime">
+	<result>/allorders.jsp</result>
+   </action>
+</package>
+</struts>    

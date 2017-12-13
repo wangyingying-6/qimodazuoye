@@ -1,0 +1,52 @@
+/* CSS Document */
+
+html{
+background:url(../image/bg.jpg) repeat-x;
+background-color:#F7E6C0;
+}
+body{
+width:1000px;
+margin:0 auto;
+}
+#header{
+background:url(../image/topbg.jpg) no-repeat;
+padding:30px 0 0 0;
+text-align:center;
+}
+#header span{
+font-size:9px;
+color:#786B50;
+display:block;
+float:left;
+letter-spacing:6px;
+width:1000px;
+text-align:center;
+}
+#header table{
+  width:700px; margin-left:400px; margin-top:20px; text-align:center; font-weight:bold;
+}
+#header table td a{text-decoration:underline; color:#ffffff;}
+#time1{color:#F7E6C0}
+  <STYLE type=text/css>.hl {
+	BACKGROUND-COLOR:#77392A; COLOR: #E2D9C8; CURSOR: hand
+}
+
+
+ #leftmenu{ height:600px; width:260px; float:left; margin-top:50px; padding-top:100px; background-color:#4A1106}
+  #content{ background:url(../image/iframe.png) repeat-x; height:600px;}
+ 
+ 
+
+#center{
+width:1700px;
+}#footer{
+width:1001px;
+height:198px;
+background:url(images/footerbg.jpg) top left no-repeat;
+
+font-size:20px;
+text-align:center;
+color:#574621;
+}
+
+

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN" "http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+	<package name="type" namespace="/type" extends="default">
+		<action name="preinserttype" class="action.TypeAction" method="preInsertType">
+		<result name="success">/addType.jsp</result>
+	</action>
+		<action name="addtype" class="action.TypeAction" method="addType">
+			<result>/showtypes.jsp</result>
+			<result name="addTypeerror">/index.jsp</result>
+		</action>
+		<action name="preupdatetype" class="action.TypeAction" method="getTypeById">
+			<result>/updatetype.jsp</result>
+		</action>
+		<action name="updatetype" class="action.TypeAction" method="updateType">
+			<result type="chain">gettypes</result>
+			<result name="updateTypeerror" type="chain">gettypes</result>
+		</action>
+		<action name="deletetype" class="action.TypeAction" method="deleteType">
+			<result type="chain">gettypes</result>
+			<result name="deleteTypeerror" type="chain">gettypes</result>
+		</action>
+		
+		<action name="gettypes" class="action.TypeAction" method="getAllTypes">
+			<result>/showtypes.jsp</result>
+		</action>
+	</package>
+</struts>    

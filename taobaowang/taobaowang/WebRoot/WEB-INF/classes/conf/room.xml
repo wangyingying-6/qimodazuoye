@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN" "http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+<package name="room" namespace="/room" extends="default">
+<default-interceptor-ref name="mystack1"></default-interceptor-ref>
+	<action name="preinsertroom" class="action.RoomAction" method="preInsertRoom">
+		<result name="success">/insertRoom.jsp</result>
+	</action>
+	<action name="insertroom" class="action.RoomAction" method="insertRoom">
+		<result name="success" type="chain">getallrooms</result>
+		<result name="insertroomerror">/insertRoom.jsp</result>
+	</action>
+	<action name="getallrooms" class="action.RoomAction" method="getAllRooms">
+	<result name="success">/showallRooms.jsp</result>
+	</action>
+		<action name="deleteroom" class="action.RoomAction" method="deleteRoom">
+			<result name="success" type="chain">getallrooms</result>
+			<result name="deleteroomerror" type="chain">getallrooms</result>
+		</action>	
+	<action name="selectroombyrid" class="action.RoomAction" method="selectRoomByRid">
+		<result>/updateRoom.jsp</result>
+	</action>
+	<action name="updateroom" class="action.RoomAction" method="updateRoom">
+		<result type="chain">getallrooms</result>
+		<result name="updateroomerror" type="chain">getallrooms</result>
+	</action>
+	<action name="updateroomstatus" class="action.RoomAction" method="updateRoomStatus">
+			<result type="chain">getallrooms</result>
+		</action>
+		<action name="selectallroomsforguest" class="action.RoomAction" method="getAllRooms">
+			<interceptor-ref name="defaultStack"></interceptor-ref>
+			<result>/showallRoomsforguest.jsp</result>
+		</action>
+</package>
+</struts>    
